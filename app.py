@@ -24,6 +24,18 @@ def success(score):
 def failure(score):
     return "Person is failed with the score" + str(score)
 
+# Result checker
+
+
+@app.route('/result/<int:score>')
+def result(score):
+    result = ""
+    if score < 50:
+        result = "fail"
+    else:
+        score = "pass"
+    return result
+
 
 if __name__ == "__main__":
     app.run(debug=True)
