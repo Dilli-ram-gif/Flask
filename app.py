@@ -1,6 +1,5 @@
 # Building Url Dynamically
 # Variable Rules and URL Building
-
 from flask import Flask
 # WSGI application
 app = Flask(__name__)
@@ -19,6 +18,11 @@ def dilliram():
 @app.route('/success/<int:score>')
 def success(score):
     return "Person is passed with the score" + str(score)
+
+
+@app.route('/failure/<int:score>')
+def failure(score):
+    return "Person is failed with the score" + str(score)
 
 
 if __name__ == "__main__":
